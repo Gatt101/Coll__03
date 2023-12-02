@@ -1,0 +1,318 @@
+class  HospitalStaff{
+    String name;
+    int age;
+    String gender;
+
+    public Person(String name, int age, String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+}
+
+class Principal extends Person {
+    String department;
+
+    public Principal(String name, int age, String gender, String department) {
+        super(name, age, gender);
+        this.department = department;
+    }
+}
+
+class HOD extends Person {
+    String department;
+
+    public HOD(String name, int age, String gender, String department) {
+        super(name, age, gender);
+        this.department = department;
+    }
+}
+
+class TeachingStaff extends Person {
+    String subject;
+
+    public TeachingStaff(String name, int age, String gender, String subject) {
+        super(name, age, gender);
+        this.subject = subject;
+    }
+}
+
+class NonTeachingStaff extends Person {
+    String role;
+
+    public NonTeachingStaff(String name, int age, String gender, String role) {
+        super(name, age, gender);
+        this.role = role;
+    }
+
+Principal principal = new Principal("John Doe", 45, "Male", "Science");
+HOD hod = new HOD("Jane Smith", 35, "Female", "Mathematics");
+TeachingStaff teacher = new TeachingStaff("Bob Johnson", 30, "Male", "Physics");
+NonTeachingStaff staff = new NonTeachingStaff("Mary Brown", 25, "Female", "Librarian");
+}
+
+
+
+abstract class Shape {
+    double area;
+
+    public abstract void calculation();
+
+    public abstract void display();
+
+}
+
+class Rectangle extends Shape {
+    int len, bre;
+
+    Rectangle(int len, int bre) {
+        this.len = len;
+        this.bre = bre;
+    }
+
+    public void calculation() {
+        super.area = len * bre;
+
+    }
+
+    public void display() {
+        System.out.println("The Area of the rectangle: " + super.area);
+    }
+}
+
+class Circle extends Shape {
+    double rad;
+
+    Circle(double rad) {
+        this.rad = rad;
+    }
+
+    public void calculation() {
+        super.area = 2 * Math.PI * rad;
+    }
+
+    public void display() {
+        System.out.println("The Area of the circle: " + super.area);
+    }
+}
+
+class Triangle extends Shape {
+    double height, base;
+
+    Triangle(double h, double b) {
+        this.height = h;
+        this.base = b;
+    }
+
+    public void calculation() {
+        super.area = 0.5 * base * height;
+    }
+
+    public void display() {
+        System.out.println("The Area of the triangle: " + super.area);
+    }
+}
+
+class Exp11 {
+    public static void main(String[] args) {
+        Rectangle r1 = new Rectangle(12, 15);
+        r1.calculation();
+        r1.display();
+
+        Circle c1 = new Circle(50);
+        c1.calculation();
+        c1.display();
+
+        Triangle t1 = new Triangle(12.25, 13.69);
+        t1.calculation();
+        t1.display();
+    }
+}
+
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.DropMode;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JLabel;
+import java.awt.Color;
+
+public class ATM<jLabel> extends JFrame {
+
+	
+	double d;
+	int x=0;
+	private JPanel contentPane;
+	private JTextField B1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ATM frame = new ATM();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ATM() {
+		
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 677, 504);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		B1 = new JTextField();
+		B1.setHorizontalAlignment(SwingConstants.LEFT);
+		B1.setFont(new Font("Yu Gothic UI", Font.BOLD, 18));
+		B1.setBounds(150, 42, 376, 63);
+		contentPane.add(B1);
+		B1.setColumns(10);
+		
+		
+		JButton btnNewButton = new JButton("1");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=B1.getText()+btnNewButton.getText();	
+				B1.setText(number);
+				
+			}
+		});
+		btnNewButton.setBounds(96, 145, 57, 38);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("2");
+		btnNewButton_1.setBounds(163, 145, 57, 38);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("3");
+		btnNewButton_2.setBounds(233, 145, 57, 38);
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("4");
+		btnNewButton_3.setBounds(96, 206, 57, 38);
+		contentPane.add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("New button");
+		btnNewButton_4.setBounds(163, 206, 57, 38);
+		contentPane.add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("New button");
+		btnNewButton_5.setBounds(233, 206, 57, 38);
+		contentPane.add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("New button");
+		btnNewButton_6.setBounds(96, 273, 57, 38);
+		contentPane.add(btnNewButton_6);
+		
+		JButton btnNewButton_7 = new JButton("New button");
+		btnNewButton_7.setBounds(163, 273, 57, 38);
+		contentPane.add(btnNewButton_7);
+		
+		JButton btnNewButton_8 = new JButton("New button");
+		btnNewButton_8.setBounds(233, 273, 57, 38);
+		contentPane.add(btnNewButton_8);
+		JLabel Label_2 = new JLabel("");
+		Label_2.setBounds(431, 336, 164, 51);
+		contentPane.add(Label_2);
+		
+		JButton btnWithraw = new JButton("wITHRAW");
+		btnWithraw.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource()==btnWithraw) {
+				//here we consider the pincode as 1234
+					if(d==1111) {
+			Label_2.setText("Enter Amount:");
+					x=1;
+					}		
+					
+				}
+			}
+		});
+		btnWithraw.setBounds(465, 145, 116, 38);
+		contentPane.add(btnWithraw);
+		
+		JButton btnDisplayStatement = new JButton("Display STatement");
+		btnDisplayStatement.setBounds(465, 215, 116, 38);
+		contentPane.add(btnDisplayStatement);
+		
+		JButton btnPrintStatement = new JButton("Print Statement");
+		btnPrintStatement.setBounds(465, 273, 116, 38);
+		contentPane.add(btnPrintStatement);
+		
+		JButton btnNewButton_8_1 = new JButton("Cancel");
+		btnNewButton_8_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				B1.setText(null);
+				
+			}
+		});
+		btnNewButton_8_1.setBounds(96, 336, 57, 38);
+		contentPane.add(btnNewButton_8_1);
+		
+		JButton btnNewButton_8_2 = new JButton("Exit");
+		btnNewButton_8_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnNewButton_8_2.setBounds(163, 336, 57, 38);
+		contentPane.add(btnNewButton_8_2);
+		
+		JLabel b2 = new JLabel("");
+		b2.setBounds(431, 397, 164, 44);
+		contentPane.add(b2);
+		
+		JButton btnNewButton_8_3 = new JButton("GO");
+		btnNewButton_8_3.setHorizontalAlignment(SwingConstants.LEFT);
+		btnNewButton_8_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			d=Double.parseDouble(B1.getText());
+				B1.setText(null);
+				if(x==1) {
+				b2.setText(""+d);	
+				}
+				
+			}
+		});
+		btnNewButton_8_3.setBounds(233, 336, 57, 38);
+		contentPane.add(btnNewButton_8_3);
+		
+		JLabel lblNewLabel = new JLabel("Enter your pin code");
+		lblNewLabel.setBounds(149, 113, 116, 22);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("ATM");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 23));
+		lblNewLabel_1.setForeground(Color.RED);
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(260, 10, 123, 22);
+		contentPane.add(lblNewLabel_1);
+		
+		
+		
+		
+	}
+}
+

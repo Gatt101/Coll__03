@@ -1,0 +1,46 @@
+Walk: A walk can be defined as a sequence of edges and vertices of a graph12. When we traverse a graph, that traverse is known as a walk12. In a walk, there can be repeated edges and vertices12. The number of edges covered in a walk is known as the length of the walk12. There are two types of walks: open walk and closed walk12. An open walk starts and ends at different vertices12, while a closed walk starts and ends at the same vertex12.
+
+Trail: A trail is an open walk where no edge is allowed to repeat12. In trails, the vertex can be repeated12. So, a trail is a sequence of vertices and edges where all edges are distinct12.
+
+Path: A path is a trail in which neither vertices nor edges are repeated12. Another definition for a path is a walk with no repeated vertex12. This directly implies that no edges will ever be repeated and hence is redundant to write in the definition of path
+
+
+A planar graph is a type of graph that can be drawn on a plane in such a way that its edges intersect only at their endpoints1. In other words, it can be drawn in such a way that no edges cross each other1. This means that you can draw the graph on a flat surface without any of the edges overlapping
+
+
+Complete Graph: A complete graph is a graph in which each pair of vertices is connected by a unique edge12. In other words, every vertex in a complete graph is adjacent to all other vertices12. A complete graph is denoted by the symbol Kn​
+, where n
+ is the number of vertices in the graph12.
+
+
+Regular Graph: A regular graph is a graph in which each vertex has the same number of neighbors, i.e., every vertex has the same degree3456. A graph is called K
+ regular if the degree of each vertex in the graph is K
+3456.
+
+
+Bipartite Graph: A bipartite graph is a graph whose vertices can be divided into two disjoint sets such that every edge connects a vertex from one set to a vertex from the other set7891011. In other words, it is a graph in which every edge connects a vertex of one set to a vertex of the other 
+
+
+Sure, here are the definitions:
+
+Eulerian Path: An Eulerian path in a graph is a path that uses every edge of the graph exactly once1234. If there is a connected graph with a trail that has all the edges of the graph, then that type of trail will be known as the Euler trail2.
+
+Eulerian Circuit: An Eulerian circuit, also known as an Eulerian cycle or tour, is a closed Eulerian path2567. That is, it’s a path in a graph that starts and ends at the same vertex and includes every edge exactly once567.
+
+Hamiltonian Path: A Hamiltonian path in a graph is a path that visits each vertex exactly once891. If there is a walk in a connected graph that passes through each and every vertex of the graph only once, this walk will be known as the Hamiltonian path8.
+
+Hamiltonian Circuit: A Hamiltonian circuit, also known as a Hamiltonian cycle, is a closed Hamiltonian path81011. That is, it’s a path in a graph that starts and ends at the same vertex and includes every vertex exactly once
+
+
+Cut Edge (Bridge)
+Let 'G' be a connected graph. An edge 'e' ∈ G is called a cut edge if 'G-e' results in a disconnected graph.
+
+If removing an edge in a graph results in to two or more graphs, then that edge is called a Cut Edge.
+
+
+Cut Vertex
+Let 'G' be a connected graph. A vertex V ∈ G is called a cut vertex of 'G', if 'G-V' (Delete 'V' from 'G') results in a disconnected graph. Removing a cut vertex from a graph breaks it in to two or more graphs.
+
+Note − Removing a cut vertex may render a graph disconnected.
+
+A connected graph 'G' may have at most (n–2) cut vertices.

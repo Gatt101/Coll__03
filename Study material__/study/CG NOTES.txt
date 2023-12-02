@@ -1,0 +1,23 @@
+     CG NOTES
+**********************
+
+2 Module
+
+The DDA (Digital Differential Analyzer) and Bresenham's algorithms are both used in computer graphics to draw lines. Here are some differences between them:
+
+- **Accuracy**: DDA uses floating point arithmetic which can cause rounding-off errors, leading to less accurate results. On the other hand, Bresenham's algorithm uses integer arithmetic, making it more accurate.
+- **Speed**: DDA involves more complex calculations including multiplication and division, making it slower. Bresenham's algorithm only uses addition and subtraction, so it's faster.
+- **Memory**: DDA requires more memory because it uses floating point values. Bresenham's algorithm uses integers, so it requires less memory.
+-implementation
+-easy to use
+- **Applications**: DDA is used when the line to be drawn is between 0 and 45 degrees, while Bresenham's algorithm is used for lines with slopes between 45 and 90 degrees.
+
+
+The **Digital Differential Analyzer (DDA)** and **Bresenham's algorithms** are both used in computer graphics to draw lines. Here are their definitions:
+
+- **DDA Algorithm**: The DDA (Digital Differential Analyzer) is a scan conversion line drawing algorithm. It takes unit steps with one coordinate and calculates the corresponding integer value for the other coordinate. The slope of a straight line is used to determine the next x and y on the straight line. For DDA, either Δx or Δy, whichever is larger, is chosen as one raster unit.
+
+- **Bresenham's Algorithm**: Bresenham's algorithm selects the optimum raster locations to represent a straight line. The algorithm always increments either x or y by one unit depending on the slope of the line. The increment in the other variable is determined by examining the distance between the actual line location and the nearest pixel. This distance is called the decision variable/parameter or the error.
+
+
+

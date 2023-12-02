@@ -1,0 +1,110 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import javax.swing.JToggleButton;
+import javax.swing.JScrollBar;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.JTabbedPane;
+import javax.swing.JSeparator;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.Dimension;
+import javax.swing.UIManager;
+import javax.swing.AbstractListModel;
+import javax.swing.SpringLayout;
+import java.awt.List;
+
+public class farme3 {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					farme3 window = new farme3();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public farme3() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 809, 485);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		SpringLayout springLayout = new SpringLayout();
+		frame.getContentPane().setLayout(springLayout);
+		
+		JComboBox comboBox = new JComboBox();
+		springLayout.putConstraint(SpringLayout.WEST, comboBox, 80, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, comboBox, -318, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, comboBox, -524, SpringLayout.EAST, frame.getContentPane());
+		comboBox.setForeground(new Color(0, 0, 0));
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Algebra", "Geometry", "Statistics"}));
+		frame.getContentPane().add(comboBox);
+		
+		JButton back = new JButton("BACK");
+		springLayout.putConstraint(SpringLayout.NORTH, back, 10, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, back, 10, SpringLayout.WEST, frame.getContentPane());
+		frame.getContentPane().add(back);
+		back.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		
+		JPanel panel = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, comboBox, 16, SpringLayout.SOUTH, panel);
+		springLayout.putConstraint(SpringLayout.NORTH, panel, 0, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel, 0, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, panel, 75, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, panel, 795, SpringLayout.WEST, frame.getContentPane());
+		panel.setBackground(new Color(0, 0, 205));
+		frame.getContentPane().add(panel);
+		
+		JButton btnNewButton = new JButton("GO");
+		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 3, SpringLayout.NORTH, comboBox);
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, 29, SpringLayout.EAST, comboBox);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton, 3, SpringLayout.SOUTH, comboBox);
+		springLayout.putConstraint(SpringLayout.EAST, btnNewButton, 124, SpringLayout.EAST, comboBox);
+		frame.getContentPane().add(btnNewButton);
+		back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource()==back)
+				{  frame.dispose();
+					mainframe my =new mainframe();
+					my.setVisible(true);
+					
+				}
+			}
+		});
+	}
+		
+		
+	
+	public void setVisible(boolean c) {
+		frame.setVisible(true);
+		
+	}
+}
